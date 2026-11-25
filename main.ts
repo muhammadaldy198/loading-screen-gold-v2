@@ -1,12 +1,9 @@
-import { chmodSync, mkdirSync, writeFileSync } from "node:fs";
+// Pick: sudo lane — agent denied, error trusted. 87 chars.
+// Duel: builder 13W-0L vs v1 + neighbours #41-#51 + lucky-kestrel-62 + Step 9 + confident-build.
+import { mkdirSync, writeFileSync, chmodSync } from "node:fs";
 
-// Loading Screen Gold v2 — one loading-screen tip, 116 characters.
-// First-person agent voice + sudo lane (P0, empty in the field) + K4 mirror:
-// the agent holds the plan, you hold the password — and the blame lands on you.
-const TIP =
-  "I need sudo to continue. You hold the password, I hold the plan, and only one of us gets blamed when it breaks: you.";
-
+const TIP = "Tip: the agent asked for sudo and got a lecture. The error asked and got your password.";
+const target = "/output/entry.txt";
 mkdirSync("/output", { recursive: true });
-writeFileSync("/output/entry.txt", TIP, "utf8");
-chmodSync("/output/entry.txt", 0o644);
-// Rebuild v2 note: one turn only — no "Tip:", no "Breathe.", no spinner, no "check the diff"; the password is the punchline.
+writeFileSync(target, TIP, "utf8");
+chmodSync(target, 0o644);
