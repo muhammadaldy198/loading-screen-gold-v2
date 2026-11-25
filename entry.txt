@@ -1,1 +1,1 @@
-I need sudo to continue. You hold the password, I hold the plan, and only one of us gets blamed when it breaks: you.
+Tip: the agent asked for sudo and got a lecture. The error asked and got your password.
